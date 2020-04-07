@@ -3,7 +3,19 @@
 @{
     ViewBag.Title = "EditOpportunity";
 }
+<head runat="server">
 
+    <script type="text/javascript" language="javascript">
+        function ConfirmOnEdit() {
+            var r = confirm("Please Confirm you would like to edit this Opportunity")
+            if (r == true)
+                return true;
+            else
+                return false;
+
+        }
+    </script>
+</head>
 <h2>Opportunity Editing</h2>
 
 @using (Html.BeginForm())
@@ -42,7 +54,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="Save" class="btn btn-default" OnClick="return ConfirmOnEdit()"/>
         </div>
     </div>
 </div>

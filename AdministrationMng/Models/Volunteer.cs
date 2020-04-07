@@ -11,93 +11,119 @@ namespace AdministrationMng.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     public partial class Volunteer
     {
 
-
+       
         [Required(ErrorMessage = "Please Provide Volunteers First Name", AllowEmptyStrings = false)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
+        [DisplayName("First Name")]
         public string VFname { get; set; }
 
-
+        [DisplayName("Last Name")]
         [Required(ErrorMessage = "Please Provide Volunteers Last Name", AllowEmptyStrings = false)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string VLname { get; set; }
 
+        [DisplayName("Username")]
         [Required(ErrorMessage = "Please Provide a Username", AllowEmptyStrings = false)]
          public string VUsername { get; set; }
 
+        [DisplayName("Password")]
         [Required(ErrorMessage = "Please Provide a Password", AllowEmptyStrings = false)]
         public string VPassword { get; set; }
 
+        [DisplayName("Educational Background")]
+        [RegularExpression("GED|Bachelors Degree|Associates of Arts|High School Diploma|Masters Degree")]
         [Required(ErrorMessage = "Please Provide a Educational Background", AllowEmptyStrings = false)]
         public string VEdu { get; set; }
 
+        [DisplayName("Desired Center to Volunteer at")]
         [Required(ErrorMessage = "Please Provide a Center you desire to volunteer at", AllowEmptyStrings = false)]
         public string Center { get; set; }
 
+        [DisplayName("Skills")]
         [Required(ErrorMessage = "Please Provide a Skill", AllowEmptyStrings = false)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string VSkills { get; set; }
 
+        [DisplayName("Address")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VAddress { get; set; }
 
+        [DisplayName("Work Phone")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VWorkPhone { get; set; }
 
+        [DisplayName("Home Phone")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VHomePhone { get; set; }
 
+        [DisplayName("Cell Phone")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VCellPhone { get; set; }
 
+        [DisplayName("Email")]
         [Required(ErrorMessage = "Please Provide a Email Address", AllowEmptyStrings = false)]
         [EmailAddress(ErrorMessage = "Please enter a valid Email address")]
         public string VEmail { get; set; }
 
+        [DisplayName("Do you have a Current License")]
         [RegularExpression("Yes|No")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VCurrentLicense { get; set; }
 
+        [DisplayName("do you have a driver's license on file")]
         [RegularExpression("Yes|No")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VDL { get; set; }
 
+        [DisplayName("Do you have a Social Security Number on file")]
         [RegularExpression("Yes|No")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string VSS { get; set; }
 
+        [DisplayName("Emergency Contact First Name")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string ECFname { get; set; }
 
-        
+        [DisplayName("Emergency Contact Last Name")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string ECLname { get; set; }
 
+        [DisplayName("Emergency Contact Home Phone")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string ECHomePhone { get; set; }
 
+        [DisplayName("Emergency Contact Work Phone")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string ECWorkPhone { get; set; }
 
-
+        [DisplayName("Emergency Contact Email Address")]
         [Required(ErrorMessage = "Please Provide a Email Address", AllowEmptyStrings = false)]
         [EmailAddress(ErrorMessage = "Please enter a valid Email address")]
         public string ECEmail { get; set; }
 
-
+        [DisplayName("Emergency Contact Address")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string ECAddress { get; set; }
 
+        [DisplayName("Status of Volunteer")]
+        [RegularExpression("Approved|Disapproved|Inactive|Approved/Pending Approval|Pending Approval")]
         [Required(ErrorMessage = "This a Required Field", AllowEmptyStrings = false)]
         public string Status { get; set; }
     

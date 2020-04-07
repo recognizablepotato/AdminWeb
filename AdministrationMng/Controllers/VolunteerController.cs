@@ -269,12 +269,14 @@ return View(list);
                     }
                     if (Volunteerstatus == "Disapproved")
                     {
+                      
                         var volunteers = from r in db.Volunteers
                                          orderby r.VFname
                                          where r.Status == Volunteerstatus || Volunteerstatus == null || Volunteerstatus == ""
                                          select r;
                         return View(volunteers);
                     }
+                
                     if (Volunteerstatus == "All")
                     {
                         return View(dc.Volunteers.Include(v => v.VImage).Include(v => v.Avaliability).ToList());
@@ -549,9 +551,11 @@ return View(list);
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "VFname,VLname,VUsername,VPassword,VEdu,Center,VSkills,VAddress,VWorkPhone,VHomePhone,VCellPhone,VEmail,VCurrentLicense,VDL,VSS,ECFname,ECLname,ECHomePhone,ECWorkPhone,ECEmail,ECAddress,Status")] Volunteer volunteer)
         {
+          
             if (ModelState.IsValid)
             {
                 db.Entry(volunteer).State = EntityState.Modified;
+               
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
