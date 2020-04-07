@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Avaliability">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VLname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MM" Type="bit" />
+          <Property Name="MA" Type="bit" />
+          <Property Name="ME" Type="bit" />
+          <Property Name="TM" Type="bit" />
+          <Property Name="TA" Type="bit" />
+          <Property Name="TE" Type="bit" />
+          <Property Name="WM" Type="bit" />
+          <Property Name="WA" Type="bit" />
+          <Property Name="WE" Type="bit" />
+          <Property Name="THM" Type="bit" />
+          <Property Name="THA" Type="bit" />
+          <Property Name="THE" Type="bit" />
+          <Property Name="FM" Type="bit" />
+          <Property Name="FA" Type="bit" />
+          <Property Name="FE" Type="bit" />
+          <Property Name="All" Type="bit" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VImages">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VLname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VSSpic" Type="image" />
+          <Property Name="VDLpic" Type="image" />
+        </EntityType>
+        <EntityType Name="Volunteers">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VLname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VUsername" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VEdu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Center" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VSkills" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VWorkPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VHomePhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VCellPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VCurrentLicense" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VDL" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VSS" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECFname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECLname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECHomePhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECWorkPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ECAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Model3StoreContainer">
+          <EntitySet Name="Avaliability" EntityType="Self.Avaliability" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VImages" EntityType="Self.VImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Avaliability">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VLname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MM" Type="Boolean" />
+          <Property Name="MA" Type="Boolean" />
+          <Property Name="ME" Type="Boolean" />
+          <Property Name="TM" Type="Boolean" />
+          <Property Name="TA" Type="Boolean" />
+          <Property Name="TE" Type="Boolean" />
+          <Property Name="WM" Type="Boolean" />
+          <Property Name="WA" Type="Boolean" />
+          <Property Name="WE" Type="Boolean" />
+          <Property Name="THM" Type="Boolean" />
+          <Property Name="THA" Type="Boolean" />
+          <Property Name="THE" Type="Boolean" />
+          <Property Name="FM" Type="Boolean" />
+          <Property Name="FA" Type="Boolean" />
+          <Property Name="FE" Type="Boolean" />
+          <Property Name="All" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VImage">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VLname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VSSpic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="VDLpic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="VFname" />
+            <PropertyRef Name="VLname" />
+          </Key>
+          <Property Name="VFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VLname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VEdu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Center" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VSkills" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VWorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VHomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VCellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VCurrentLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VDL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VSS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECFname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECLname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECHomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECWorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ECAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Avaliabilities" EntityType="Self.Avaliability" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="VImages" EntityType="Self.VImage" />
+          <EntitySet Name="Volunteers" EntityType="Self.Volunteer" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1Model3StoreContainer" CdmEntityContainer="Database1Entities2">
+          <EntitySetMapping Name="Avaliabilities">
+            <EntityTypeMapping TypeName="Database1Model3.Avaliability">
+              <MappingFragment StoreEntitySet="Avaliability">
+                <ScalarProperty Name="VFname" ColumnName="VFname" />
+                <ScalarProperty Name="VLname" ColumnName="VLname" />
+                <ScalarProperty Name="MM" ColumnName="MM" />
+                <ScalarProperty Name="MA" ColumnName="MA" />
+                <ScalarProperty Name="ME" ColumnName="ME" />
+                <ScalarProperty Name="TM" ColumnName="TM" />
+                <ScalarProperty Name="TA" ColumnName="TA" />
+                <ScalarProperty Name="TE" ColumnName="TE" />
+                <ScalarProperty Name="WM" ColumnName="WM" />
+                <ScalarProperty Name="WA" ColumnName="WA" />
+                <ScalarProperty Name="WE" ColumnName="WE" />
+                <ScalarProperty Name="THM" ColumnName="THM" />
+                <ScalarProperty Name="THA" ColumnName="THA" />
+                <ScalarProperty Name="THE" ColumnName="THE" />
+                <ScalarProperty Name="FM" ColumnName="FM" />
+                <ScalarProperty Name="FA" ColumnName="FA" />
+                <ScalarProperty Name="FE" ColumnName="FE" />
+                <ScalarProperty Name="All" ColumnName="All" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="Database1Model3.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VImages">
+            <EntityTypeMapping TypeName="Database1Model3.VImage">
+              <MappingFragment StoreEntitySet="VImages">
+                <ScalarProperty Name="VFname" ColumnName="VFname" />
+                <ScalarProperty Name="VLname" ColumnName="VLname" />
+                <ScalarProperty Name="VSSpic" ColumnName="VSSpic" />
+                <ScalarProperty Name="VDLpic" ColumnName="VDLpic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volunteers">
+            <EntityTypeMapping TypeName="Database1Model3.Volunteer">
+              <MappingFragment StoreEntitySet="Volunteers">
+                <ScalarProperty Name="VFname" ColumnName="VFname" />
+                <ScalarProperty Name="VLname" ColumnName="VLname" />
+                <ScalarProperty Name="VUsername" ColumnName="VUsername" />
+                <ScalarProperty Name="VPassword" ColumnName="VPassword" />
+                <ScalarProperty Name="VEdu" ColumnName="VEdu" />
+                <ScalarProperty Name="Center" ColumnName="Center" />
+                <ScalarProperty Name="VSkills" ColumnName="VSkills" />
+                <ScalarProperty Name="VAddress" ColumnName="VAddress" />
+                <ScalarProperty Name="VWorkPhone" ColumnName="VWorkPhone" />
+                <ScalarProperty Name="VHomePhone" ColumnName="VHomePhone" />
+                <ScalarProperty Name="VCellPhone" ColumnName="VCellPhone" />
+                <ScalarProperty Name="VEmail" ColumnName="VEmail" />
+                <ScalarProperty Name="VCurrentLicense" ColumnName="VCurrentLicense" />
+                <ScalarProperty Name="VDL" ColumnName="VDL" />
+                <ScalarProperty Name="VSS" ColumnName="VSS" />
+                <ScalarProperty Name="ECFname" ColumnName="ECFname" />
+                <ScalarProperty Name="ECLname" ColumnName="ECLname" />
+                <ScalarProperty Name="ECHomePhone" ColumnName="ECHomePhone" />
+                <ScalarProperty Name="ECWorkPhone" ColumnName="ECWorkPhone" />
+                <ScalarProperty Name="ECEmail" ColumnName="ECEmail" />
+                <ScalarProperty Name="ECAddress" ColumnName="ECAddress" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
